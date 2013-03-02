@@ -1,7 +1,7 @@
-group { 'puppet': ensure => 'present' }
+#group { 'puppet': ensure => 'present' }
 
 class { 'mysql::server':
-  config_hash => { 'root_password' => 'root-kcsql' }
+  config_hash => { 'root_password' => 'root-kcsql', 'bind_address' => $ipaddress }
 }
 
 mysql::db { 'mydb':
